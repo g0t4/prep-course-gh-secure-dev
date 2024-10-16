@@ -8,5 +8,5 @@ BTW
     - query: https://github.com/github/codeql/blob/main/csharp/ql/src/Security%20Features/CWE-548/ASPNetDirectoryListing.ql
         - yup this even shows "enabled" ... hopefully that fixes it
   - ok I got an alert but for a diff reason,one that isn't supported by copilot autofix
-
+- yay it triggered => of course its a simple fix => go to alert => click Generate Fix => then it shows inline in alert thereafter... this has to be unpleasant if you wanted dir browsing (ie internal service)?
 
