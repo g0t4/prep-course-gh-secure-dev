@@ -2,4 +2,4 @@
 
 [atlassian]
 username = fake_user
-api_token = ATATT3xFJ68XVGKL9YzBHjFQz3EzHo9dVfEpVfT21YoMjhQklk32nH8B3n0gBv7z1
+atlassian_api_token = ATATT3xFJ68XVGKL9YzBHjFQz3EzHo9dVfEpVfT21YoMjhQklk32nH8B3n0gBv7z1
