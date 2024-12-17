@@ -1,0 +1,28 @@
+name: show install token perms
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: # manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: token check
+      run: echo ${{ secrets.GITHUB_TOKEN }}
+    - name: check2
+      run: echo ${{ secrets.GITHUB_TOKEN }} | head -c 6
+    - name: repos
+      run: gh repo list
+      env:
+        GH_TOKEN: ${{ github.token }}
+    - name: show installation/repositories
+      run: |
+        curl -L \
+        -H "Accept: application/vnd.github+json" \
+        -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        https://api.github.com/installation/repositories
