@@ -32,3 +32,7 @@ jobs:
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/user
+    - name: graphql repos
+      run: gh api graphql -f query='{ viewer { repositories(first: 100) { nodes { name url } } } }'
+      env:
+        GH_TOKEN: ${{ github.token }}
